@@ -1,0 +1,29 @@
+{
+  "name": "Getting Steam Status",
+  "version": "1.0",
+  "description": "Get Salesforce Steam A & B status",
+  "manifest_version": 2,
+  "permissions": ["activeTab", "declarativeContent", "storage"],
+  "background": {
+    "scripts": ["background_script.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/"],
+      "js": ["jquery-3.4.1.min.js"],
+      "css": ["css/style.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "options_page": "options.html",
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/steam.png",
+      "32": "images/steam.png",
+      "48": "images/steam.png",
+      "128": "images/steam.png"
+    }
+  }
+}
